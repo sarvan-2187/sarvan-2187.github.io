@@ -32,7 +32,7 @@ function displayReminders() {
     reminderList.innerHTML = '';
     reminders.forEach(reminder => {
         const li = document.createElement('li');
-        li.innerHTML = `${reminder.name} - ${reminder.datetime} - ${reminder.dosage} 
+        li.innerHTML = `${reminder.name} - ${reminder.dosage} 
             <button class="edit-button" onclick="editReminder(${reminder.id})">Edit</button> 
             <button class="remove-button" onclick="removeReminder(${reminder.id})">Remove</button>`;
         reminderList.appendChild(li);
