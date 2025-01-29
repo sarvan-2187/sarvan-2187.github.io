@@ -77,4 +77,4 @@ setInterval(() => {
             removeReminder(reminder.id);
         }
     });
-}, 60000);
+}, 600);
