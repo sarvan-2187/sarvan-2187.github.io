@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/base :: head">
+    <title>Donor Dashboard - NGO Connect</title>
+</head>
+<body>
+    <div th:replace="layout/base :: body">
+        <div th:fragment="content">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <nav class="dashboard-sidebar">
+                    <div class="px-3 mb-4">
+                        <h5 class="text-white fw-bold">
+                            <i class="fas fa-heart me-2"></i>Donor Dashboard
+                        </h5>
+                        <p class="text-white-50 mb-0" th:text="'Welcome, ' + ${user.firstName}">Welcome, User</p>
+                    </div>
+                    
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="fas fa-tachometer-alt"></i>Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#donations">
+                                <i class="fas fa-heart"></i>My Donations
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#campaigns">
+                                <i class="fas fa-bullhorn"></i>Browse Campaigns
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#impact">
+                                <i class="fas fa-chart-line"></i>Impact Reports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/auth/profile}">
+                                <i class="fas fa-user-edit"></i>Profile Settings
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Main Content -->
+                <main class="dashboard-content">
+                    <button class="dashboard-mobile-toggle btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Page Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h3 mb-0">Donor Dashboard</h1>
+                            <p class="text-muted mb-0">Track your donations and discover new causes</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-plus me-2"></i>Make Donation
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="dashboard-card dashboard-stat">
+                                <div class="dashboard-stat-icon bg-primary">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="dashboard-stat-number">12</div>
+                                <div class="dashboard-stat-label">Total Donations</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="dashboard-card dashboard-stat">
+                                <div class="dashboard-stat-icon bg-success">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                                <div class="dashboard-stat-number">₹25,000</div>
+                                <div class="dashboard-stat-label">Total Donated</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="dashboard-card dashboard-stat">
+                                <div class="dashboard-stat-icon bg-info">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="dashboard-stat-number">8</div>
+                                <div class="dashboard-stat-label">Campaigns Supported</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="dashboard-card dashboard-stat">
+                                <div class="dashboard-stat-icon bg-warning">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="dashboard-stat-number">150</div>
+                                <div class="dashboard-stat-label">Lives Impacted</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Donations -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-table">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Recent Donations</h5>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Campaign</th>
+                                                <th>NGO</th>
+                                                <th>Amount</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="fw-bold">Education for All</div>
+                                                    <small class="text-muted">Providing quality education...</small>
+                                                </td>
+                                                <td>Hope Foundation</td>
+                                                <td class="fw-bold text-success">₹5,000</td>
+                                                <td>Dec 15, 2024</td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="fw-bold">Clean Water Initiative</div>
+                                                    <small class="text-muted">Bringing clean water to rural...</small>
+                                                </td>
+                                                <td>Water for Life</td>
+                                                <td class="fw-bold text-success">₹3,000</td>
+                                                <td>Dec 10, 2024</td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="fw-bold">Healthcare Support</div>
+                                                    <small class="text-muted">Medical aid for underprivileged...</small>
+                                                </td>
+                                                <td>Health First NGO</td>
+                                                <td class="fw-bold text-success">₹2,500</td>
+                                                <td>Dec 5, 2024</td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Impact Summary -->
+                        <div class="col-lg-4">
+                            <div class="dashboard-widget">
+                                <div class="dashboard-widget-header">
+                                    <h6 class="dashboard-widget-title">Your Impact</h6>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-label">
+                                        <span class="progress-title">Education</span>
+                                        <span class="progress-value">₹12,000</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" style="width: 48%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-label">
+                                        <span class="progress-title">Healthcare</span>
+                                        <span class="progress-value">₹8,000</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" style="width: 32%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-label">
+                                        <span class="progress-title">Environment</span>
+                                        <span class="progress-value">₹5,000</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="dashboard-widget">
+                                <div class="dashboard-widget-header">
+                                    <h6 class="dashboard-widget-title">Recent Activity</h6>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-success">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Donated ₹5,000 to Education for All</div>
+                                        <div class="activity-time">2 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-info">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Received impact report from Hope Foundation</div>
+                                        <div class="activity-time">5 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-primary">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Browsed new campaigns</div>
+                                        <div class="activity-time">1 week ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Campaigns -->
+                    <div class="dashboard-widget">
+                        <div class="dashboard-widget-header">
+                            <h5 class="dashboard-widget-title">Recommended Campaigns</h5>
+                            <a href="#" class="dashboard-widget-action">View All</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Campaign" class="card-img-top" alt="Campaign">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Food Security Program</h6>
+                                        <p class="card-text small text-muted">Providing nutritious meals to children in need...</p>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" style="width: 65%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between small">
+                                            <span>₹65,000 raised</span>
+                                            <span>₹100,000 goal</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <button class="btn btn-primary btn-sm w-100">Donate Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <img src="https://via.placeholder.com/300x200/17a2b8/ffffff?text=Campaign" class="card-img-top" alt="Campaign">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Digital Literacy Initiative</h6>
+                                        <p class="card-text small text-muted">Teaching digital skills to rural communities...</p>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-info" style="width: 40%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between small">
+                                            <span>₹20,000 raised</span>
+                                            <span>₹50,000 goal</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <button class="btn btn-primary btn-sm w-100">Donate Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <img src="https://via.placeholder.com/300x200/ffc107/000000?text=Campaign" class="card-img-top" alt="Campaign">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Women Empowerment</h6>
+                                        <p class="card-text small text-muted">Supporting women entrepreneurs and skill development...</p>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-warning" style="width: 75%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between small">
+                                            <span>₹37,500 raised</span>
+                                            <span>₹50,000 goal</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <button class="btn btn-primary btn-sm w-100">Donate Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
