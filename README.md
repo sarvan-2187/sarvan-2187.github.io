@@ -2,7 +2,7 @@
 
 A high-fidelity, premium landing page for the **Bookmrk** Chrome Extension. Built with a focus on modern aesthetics, performance, and interactive storytelling.
 
-## 🚀 Live Features
+## Live Features
 
 - **Interactive Before/After Slider**: A custom-built comparison tool showcasing the transformation from "Browser Chaos" to "Bookmrk Canvas".
 - **Dynamic GitHub Integration**: Automatically fetches the latest release version and download links directly from the GitHub API.
