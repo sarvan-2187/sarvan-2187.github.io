@@ -12,7 +12,7 @@ A high-fidelity, premium landing page for the **Bookmrk** Chrome Extension. Buil
 - **Keyboard Animation**: Visual demonstration of the `Ctrl + Shift + Y` instant capture workflow.
 - **Direct Video Embed**: Integrated setup guide for a zero-click educational experience.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Core**: Semantic HTML5, Vanilla JavaScript (ES6+).
 - **Styling**: Vanilla CSS3 with CSS Variables and advanced animations.
@@ -21,7 +21,7 @@ A high-fidelity, premium landing page for the **Bookmrk** Chrome Extension. Buil
 - **Smooth Scroll**: [Lenis](https://lenis.darkroom.engineering/).
 - **API**: GitHub REST API for dynamic versioning.
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```text
 ├── index.html        # Main landing page (HTML/CSS/JS)
@@ -35,11 +35,11 @@ A high-fidelity, premium landing page for the **Bookmrk** Chrome Extension. Buil
 └── README.md         # Project documentation
 ```
 
-## 🏗️ Getting Started
+## Getting Started
 
 Simply open `index.html` in any modern browser to view the landing page. No build steps or dependencies are required as everything is handled via high-performance CDNs.
 
-## 📄 License
+## License
 
 This project is open-source and available under the **MIT License**.
 
